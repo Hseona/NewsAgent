@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴스 요약</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .stats {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .stats-item {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .source-section {
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        .source-section:last-child {
+            margin-bottom: 0;
+        }
+        .source-section:last-child .section-divider {
+            display: none;
+        }
+        .source-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .source-icon {
+            font-size: 28px;
+            line-height: 1;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        .source-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+            vertical-align: middle;
+            display: inline;
+        }
+        .news-items-container {
+            background-color: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .news-count-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #e9ecef 20%, #007bff 50%, #e9ecef 80%, transparent 100%);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+        .news-item {
+            padding: 25px;
+            border-bottom: 1px solid #f1f3f4;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-title {
+            font-weight: 800;
+            font-size: 22px;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .news-meta {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .news-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .news-link:hover {
+            text-decoration: underline;
+        }
+        .summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+            border-radius: 0 5px 5px 0;
+        }
+        .summary strong {
+            color: #155724;
+        }
+        .original {
+            background-color: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 0 5px 5px 0;
+            font-style: italic;
+            color: #856404;
+        }
+        .original strong {
+            color: #856404;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .header {
+                padding: 20px 15px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .news-item {
+                padding: 20px 15px;
+            }
+            .stats-item {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 뉴스 요약</h1>
+            <p>{{current_date}}</p>
+        </div>
+        
+        <div class="stats">
+            <span class="stats-item">📊 총 {{total_count}}건의 뉴스</span>
+            <span class="stats-item">🏢 {{source_count}}개 뉴스 소스</span>
+        </div>
+
+        {{news_sections}}
+
+        <div class="footer">
+            <p>📧 Seona's NewsAgent에서 자동으로 생성된 뉴스 요약입니다.</p>
+            <p>이 이메일은 {{current_time}}에 발송되었습니다.</p>
+        </div>
+    </div>
+</body>
+</html>
