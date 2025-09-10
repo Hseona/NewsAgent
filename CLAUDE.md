@@ -31,7 +31,7 @@ NewsAgent/
 ### 환경 설정
 ```bash
 # NewsAgent 디렉토리로 이동
-cd /Users/seona/NewsAgent
+cd ../../NewsAgent
 
 # 가상환경 활성화
 source .venv/bin/activate
@@ -107,5 +107,5 @@ DB_FILE=sent_articles.json
 ## 개발 환경 정보
 
 - Python 버전: 3.9
-- 가상환경: `/Users/seona/NewsAgent/.venv`
-- IDE 설정: PyCharm 프로젝트는 `/Users/seona/PyCharmMiscProject`에서 이 NewsAgent 모듈을 참조
+- 가상환경: `../NewsAgent/.venv`
+- IDE 설정: PyCharm 프로젝트는 `../PyCharmMiscProject`에서 이 NewsAgent 모듈을 참조
