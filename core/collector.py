@@ -23,6 +23,7 @@ def get_date_range_for_naver():
     return today.strftime('%Y%m%d')
 
 def fetch_naver_news(keyword, client_id, client_secret):
+    # todo 하드코딩 문자열 클래스? 파일? 변수로 변경
     url = "https://openapi.naver.com/v1/search/news.json"
     headers = {
         "X-Naver-Client-Id": client_id,

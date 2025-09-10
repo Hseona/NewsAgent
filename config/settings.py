@@ -17,6 +17,7 @@ BATCH_TIMES = ["09:00", "15:00", "21:00"]
 
 
 # 쉼표로 구분된 문자열 → 리스트로 변환
+#TODO 입력 받아서 처리하는 걸로 변경
 KEYWORDS = os.getenv("KEYWORDS", "AI,Trump,Elon Musk,IT,OpenAI,Sam Altman,Google,US,삼성,Samsung,정치,박물관,전시회,그림").split(",")
 BATCH_TIMES = os.getenv("BATCH_TIMES", "09:00,15:00,21:00").split(",")
 
